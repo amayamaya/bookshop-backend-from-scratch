@@ -10,7 +10,7 @@ CREATE TABLE books (
 );
 
 CREATE TABLE authors (
-    author_id BIGINT GENERATED ALWAS AS IDENTITY PRIMARY KEY,
+    author_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     author_name VARCHAR,
     author_dob BIGINT,
     author_pob_pop BIGINT
