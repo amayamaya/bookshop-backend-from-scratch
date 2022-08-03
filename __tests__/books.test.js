@@ -3,14 +3,15 @@ const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
 
-describe('backend-express-template routes', () => {
+describe('books routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
 
-  it('#GET /books should return a list of books', async () => {
+  it('/books should return a list of books', async () => {
     const res = await request(app).get('/books');
-    expect(res.body).toEqual(5);
+    console.log(res.status);
+    expect(res.body.length).toEqual(5);
   });
 
   afterAll(() => {
