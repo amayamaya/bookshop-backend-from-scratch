@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS books;
 CREATE TABLE books (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     title VARCHAR NOT NULL,
-    released BIGINT NOT NULL,
+    released BIGINT NOT NULL
 );
 INSERT INTO books (title, released) VALUES
 ('Medea', -431),
@@ -40,4 +40,4 @@ INSERT INTO book_author (book_id, author_id) VALUES
 (2, 2),
 (3, 2),
 (4, 3),
-(5, 4);
+(5, 4)
