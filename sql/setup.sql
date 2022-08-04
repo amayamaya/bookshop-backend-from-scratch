@@ -10,11 +10,11 @@ CREATE TABLE books (
     released BIGINT NOT NULL
 );
 INSERT INTO books (title, released) VALUES
-('Medea', -431),
+('Medea', 431),
 ('Iliad', 735),
-('Odyssey', -800),
+('Odyssey', 200),
 ('Zorba the Greek', 1946),    
-('Oedipus the King', -430);
+('Oedipus the King', 430);
 
 CREATE TABLE authors (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -23,10 +23,10 @@ CREATE TABLE authors (
     author_pob_pop BIGINT
 );
 INSERT INTO authors (author_name, author_dob, author_pob_pop) VALUES
-('Euripides', -480, 42),
-('Homer', -850, 1000),
+('Euripides', 480, 42),
+('Homer', 850, 1000),
 ('Nikos Kazantzakis', 1883, 1000),
-('Sophocles', -496, 60);
+('Sophocles', 496, 60);
 
 CREATE table book_author (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
