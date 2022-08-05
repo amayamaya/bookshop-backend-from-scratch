@@ -32,6 +32,7 @@ describe('books routes', () => {
 
   it('/authors/:id should return data from a single author', async () => {
     const resp = await request(app).get('/authors/2');
+    console.log(resp.body);
     expect(resp.body).toEqual({
       id: expect.any(String),
       author_name: expect.any(String),
