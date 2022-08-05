@@ -30,6 +30,17 @@ describe('books routes', () => {
     });
   });
 
+  it('/authors/:id should return data from a single author', async () => {
+    const resp = await request(app).get('/authors/2');
+    expect(resp.body).toEqual({
+      id: expect.any(String),
+      author_name: expect.any(String),
+      author_dob: expect.any(String),
+      author_pob_pop: expect.any(String),
+      books: expect.any(Array),
+    });
+  });
+
   afterAll(() => {
     pool.end();
   });
