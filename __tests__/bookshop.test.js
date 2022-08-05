@@ -26,7 +26,7 @@ describe('books routes', () => {
       id: expect.any(String),
       title: expect.any(String),
       released: expect.any(String),
-      author_id: expect.any(Array),
+      authors: expect.any(Array),
     });
   });
 
