@@ -19,8 +19,8 @@ INSERT INTO books (title, released) VALUES
 CREATE TABLE authors (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     author_name VARCHAR,
-    author_dob BIGINT,
-    author_pob_pop BIGINT
+    author_dob BIGINT NOT NULL,
+    author_pob_pop BIGINT NOT NULL
 );
 INSERT INTO authors (author_name, author_dob, author_pob_pop) VALUES
 ('Euripides', 480, 42),
