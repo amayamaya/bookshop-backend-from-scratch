@@ -20,12 +20,15 @@ describe('books routes', () => {
     expect(res.body.length).toEqual(4);
   });
 
-  // it('books/:id should return data from a single book', async () => {
-  //   const res = await request(app).get('/books/1');
-  //   expect(res.body).toHaveProperty('id', '1');
-  //   expect(res.body).toHaveProperty('title', 'Medea');
-  //   expect(res.body).toHaveProperty('released', '431');
-  // });
+  it('books/:id should return data from a single book', async () => {
+    const res = await request(app).get('/books/1');
+    expect(res.body).toEqual({
+      id: expect.any(String),
+      title: expect.any(String),
+      released: expect.any(String),
+      author_id: expect.any(Array),
+    });
+  });
 
   afterAll(() => {
     pool.end();
