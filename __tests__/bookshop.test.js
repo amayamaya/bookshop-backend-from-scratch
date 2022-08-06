@@ -45,11 +45,7 @@ describe('books routes', () => {
   it('/books should create a new book', async () => {
     const resp = await request(app)
       .post('/books')
-      .send({
-        title: 'Something Different',
-        released: '2222',
-        authors: ['1', '2'],
-      });
+      .send({ title: 'Something Different', released: '2022' });
     expect(resp.status).toBe(200);
     expect(resp.body).toEqual({
       id: expect.any(String),
@@ -57,6 +53,19 @@ describe('books routes', () => {
       released: expect.any(String),
       authors: expect.any(Array),
     });
+  });
+
+  it('/authors should create a new author', async () => {
+    const resp = await request(app).post('/authors').send({
+      author_name: 'Someone Else',
+      author_dob: '888',
+      author_pob_pop: '888',
+    });
+    expect(resp.status).toBe(200);
+    expect(resp.body.id).toEqual(expect.any(String));
+    expect(resp.body.author_name).toEqual('Someone Else');
+    expect(resp.body.author_dob).toEqual('888');
+    expect(resp.body.author_pob_pop).toEqual('888');
   });
 
   afterAll(() => {
